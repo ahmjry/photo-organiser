@@ -9,6 +9,7 @@
   </head>
   <body>
 <form method="post" enctype="multipart/form-data">
+  <div id="status">Once you have selected files and added categories, press next</div>
   <div style="padding-bottom: 10px">
     <label for="image_uploads" id="initiallabel">Choose images to upload (PNG, JPG)</label>
     <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
@@ -25,7 +26,7 @@
     <button id="cat2btn" type="button">Cat2</button>-->
   </div>
   <div class="preview">
-    <p>No files currently selected for upload</p>
+    <p></p>
   </div>
 </form>
 </body>
@@ -42,8 +43,6 @@ var initiallabel = document.getElementById('initiallabel');
 var nextb = document.getElementById('next');
 var cat1 = document.getElementById('category1');
 var cat2 = document.getElementById('category2');
-//var cat1btn = document.getElementById('cat1btn');
-//var cat2btn = document.getElementById('cat2btn');
 var addcat = document.getElementById('addcat');
 var categories = document.getElementById('categories');
 var btnarea = document.getElementById('btnarea');
@@ -87,6 +86,9 @@ function updateImageDisplay() {
   initialupload.style.display = "none";
   initiallabel.style.display = "none";
   nextb.style.display = "none";
+  addcat.style.display = "none";
+
+  document.getElementById("status").innerText = "click the relevant category";
 
   //cat1btn.innerText = cat1.value;
   //cat2btn.innerText = cat2.value;
@@ -95,6 +97,7 @@ function updateImageDisplay() {
     var allcats = document.getElementsByClassName("catlist");
 
     for (var j=0; j<allcats.length; j++){
+      allcats[j].style.display = "none";
       folders.push([]);
       var newbtn = document.createElement('button');
       newbtn.addEventListener('click', pickedcat.bind(this, j));
@@ -120,6 +123,7 @@ function updateImageDisplay() {
     preview.appendChild(image);
   } else {
     done = true;
+    document.getElementById("status").innerText = "Here are your updated folders";
     /*var done = document.createElement('p');
     var t = document.createTextNode("You are done");
     done.appendChild(t);
