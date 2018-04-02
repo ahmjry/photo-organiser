@@ -20,10 +20,10 @@
     <div id="categories">
       <div><input type="text" class = "catlist" id="category1" name="category1" placeholder="category 1"></div>
     </div>
-    <button id="addcat" type="button">add more</button>
+    <button id="addcat" class="btn btn-default" type="button">add more</button>
   </div>
   <div>
-    <button id="next" type="button" >Next</button>
+    <button id="next" class="btn btn-default" type="button" >Next</button>
   </div>
   <div id="btnarea">
     <!--<button id="cat1btn" type="button">Cat1</button>
@@ -106,6 +106,7 @@ function updateImageDisplay() {
       allcats[j].style.display = "none";
       folders.push([]);
       var newbtn = document.createElement('button');
+      newbtn.addClass("btn btn-default");
       newbtn.addEventListener('click', pickedcat.bind(this, j));
       newbtn.innerText = allcats[j].value;
       newbtn.type = 'button';
@@ -114,6 +115,7 @@ function updateImageDisplay() {
     //This is to add the ignore button
     folders.push([]);
     var newbtn = document.createElement('button');
+    newbtn.addClass("btn btn-default");
     newbtn.addEventListener('click', pickedcat.bind(this, j));
     newbtn.innerText = "ignore";
     newbtn.type = 'button';
