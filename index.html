@@ -26,8 +26,7 @@
     <button id="next" class="btn btn-default" type="button" >Next</button>
   </div>
   <div id="btnarea">
-    <!--<button id="cat1btn" type="button">Cat1</button>
-    <button id="cat2btn" type="button">Cat2</button>-->
+    <!-- Choose files for buttons-->
   </div>
   <div class="preview">
     <p></p>
@@ -39,8 +38,7 @@
 <script>
 var counter=0;
 var done=false;
-//var cat1imgs = [];
-//var cat2imgs = [];
+//setting variables for categories and such
 var folders= [];
 var input = document.querySelector('input');
 var preview = document.querySelector('.preview');
@@ -59,36 +57,18 @@ addcat.addEventListener('click', function(){
   var newdiv = document.createElement('div');
   var newcat = document.createElement('input');
   newcat.className = "catlist";
-  /*newcat.addEventListener('click',
-      function() {
-          pickedcat(numbtn);
-      }
-  );*/
+  
   newdiv.appendChild(newcat);
   categories.appendChild(newdiv);
 });
 
-//cat1btn.style.display = "none";
-//cat2btn.style.display = "none";
-//input.style.opacity = 0;
-//input.addEventListener('change', updateImageDisplay);
 nextb.addEventListener('click', updateImageDisplay);
-/*cat1btn.addEventListener('click',
-    function() {
-        pickedcat(1);
-    }
-);
-cat2btn.addEventListener('click',
-    function() {
-        pickedcat(2);
-    }
-);*/
+
 
 function updateImageDisplay() {
-  //cat1btn.style.display = "inline";
-  //cat2btn.style.display = "inline";
+ 
   cat1.style.display = "none";
-  //cat2.style.display = "none";
+ 
   initialupload.style.display = "none";
   initiallabel.style.display = "none";
   nextb.style.display = "none";
@@ -96,8 +76,7 @@ function updateImageDisplay() {
 
   document.getElementById("status").innerText = "click the relevant category";
 
-  //cat1btn.innerText = cat1.value;
-  //cat2btn.innerText = cat2.value;
+  
 
   if(counter==0){ //only execute once
     var allcats = document.getElementsByClassName("catlist");
@@ -140,11 +119,7 @@ function updateImageDisplay() {
     newp.innerText = "Here are your updated folders";
     statu.appendChild(em);
     statu.appendChild(newp);
-    //document.getElementById("status").style.fontSize = "20px";
-    /*var done = document.createElement('p');
-    var t = document.createTextNode("You are done");
-    done.appendChild(t);
-    preview.appendChild(done);*/
+    
   }
 }
 
