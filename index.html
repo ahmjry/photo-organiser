@@ -5,9 +5,13 @@
     <title>Photo Organiser</title>
     <style>
       img {max-width: 50%;}
+      #status {font-size: 20px;}
       </style>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
+    <div class="container">
+<div class="jumbotron">
 <form method="post" enctype="multipart/form-data">
   <div id="status">Once you have selected files and added categories, press next</div>
   <div style="padding-bottom: 10px">
@@ -29,6 +33,8 @@
     <p></p>
   </div>
 </form>
+</div>
+</div>
 </body>
 <script>
 var counter=0;
@@ -123,7 +129,16 @@ function updateImageDisplay() {
     preview.appendChild(image);
   } else {
     done = true;
-    document.getElementById("status").innerText = "Here are your updated folders";
+    var statu = document.getElementById("status");
+    statu.innerText = "";
+    var em = document.createElement("EM");
+    em.style.fontWeight = "bold";
+    em.innerText= "You're Done!"
+    var newp = document.createElement("div");
+    newp.innerText = "Here are your updated folders";
+    statu.appendChild(em);
+    statu.appendChild(newp);
+    //document.getElementById("status").style.fontSize = "20px";
     /*var done = document.createElement('p');
     var t = document.createTextNode("You are done");
     done.appendChild(t);
