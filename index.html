@@ -85,7 +85,6 @@ function updateImageDisplay() {
       allcats[j].style.display = "none";
       folders.push([]);
       var newbtn = document.createElement('button');
-      newbtn.addClass("btn btn-default");
       newbtn.addEventListener('click', pickedcat.bind(this, j));
       newbtn.innerText = allcats[j].value;
       newbtn.type = 'button';
@@ -94,7 +93,6 @@ function updateImageDisplay() {
     //This is to add the ignore button
     folders.push([]);
     var newbtn = document.createElement('button');
-    newbtn.addClass("btn btn-default");
     newbtn.addEventListener('click', pickedcat.bind(this, j));
     newbtn.innerText = "ignore";
     newbtn.type = 'button';
